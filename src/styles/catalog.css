@@ -1,0 +1,158 @@
+.catalog-connection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--muted);
+  margin: 15px 0;
+}
+.catalog-connection small {
+  margin-left: auto;
+  font-size: 10px;
+}
+.connection-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+.connection-dot.failed {
+  background: var(--error);
+}
+.provenance {
+  font-size: 11px;
+  margin: 12px 0;
+}
+.provenance-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 9px;
+  letter-spacing: 0.3px;
+}
+.provenance-badge.verified {
+  background: color-mix(in srgb, var(--success) 12%, var(--surface));
+  color: var(--success);
+}
+.provenance-badge.stale,
+.provenance-badge.rejected {
+  color: var(--error);
+  background: color-mix(in srgb, var(--error) 10%, var(--surface));
+}
+.provenance-description {
+  display: block;
+  margin-top: 9px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.provenance details {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.provenance details summary {
+  font-size: 11px;
+  color: var(--primary);
+}
+.source-record {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+.source-record p {
+  font-size: 11px;
+  margin-top: 6px;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.reference-loader {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  border-radius: 10px;
+}
+.reference-loader h3 {
+  font-size: 14px;
+}
+.reference-loader p {
+  font-size: 11px;
+  margin: 8px 0 15px;
+}
+.reference-loader select {
+  font-size: 12px;
+}
+.reference-loader .button {
+  margin-top: 12px;
+}
+.reference-costs {
+  font-size: 12px;
+  padding: 12px 0;
+}
+.api-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+@media (max-width: 520px) {
+  .catalog-connection {
+    font-size: 10px;
+  }
+  .catalog-connection small {
+    margin-left: 14px;
+    width: 100%;
+    font-size: 9px;
+  }
+  .pagination {
+    flex-wrap: wrap;
+  }
+  .reference-loader {
+    padding: 15px;
+  }
+}
+/* Nested tables scroll inside their panel; grid items must not inherit table minimum width. */
+.detail-grid > *,
+.financial-layout > *,
+.two-column > * {
+  min-width: 0;
+}
+
+/* Structured scholarship details keep evidence readable on narrow screens. */
+.scholarship-details { overflow-wrap: anywhere; line-height: 1.7; }
+.scholarship-details h2 { margin-top: 1.5rem; }
+.scholarship-details .panel { padding: 1.25rem; margin-block: 1rem; }
+.scholarship-details li { margin-block: .5rem; }
+.intelligence-card { padding: 1.5rem; overflow-wrap: anywhere; }
+.intelligence-card .row { flex-wrap: wrap; gap: .75rem; }
+.intelligence-facts > div { border-bottom: 1px solid var(--border, #e0e5ee); padding: .8rem 0; }
+.intelligence-facts dt { font-weight: 600; text-transform: capitalize; }
+.intelligence-facts dd { margin: .4rem 0 0; overflow-wrap: anywhere; }
+.intelligence-facts p { margin: .4rem 0; }
+.intelligence-comparison { margin: 1rem 0 2rem; }
+.intelligence-comparison td { min-width: 240px; vertical-align: top; }
+.intelligence-comparison th { vertical-align: top; }
+.intelligence-comparison caption { text-align: left; padding: 1rem; }
+.matching-panel { padding: 1.5rem; margin-block: 1rem; overflow-wrap: anywhere; }
+.matching-dimensions { padding-left: 1.25rem; }
+.matching-dimensions li { margin-block: .75rem; }
+.matching-dimensions p { margin-block: .25rem; }
+.matching-check { border-top: 1px solid var(--border, #e0e5ee); padding-block: 1rem; }
+.matching-check dt { font-weight: 600; }
+.matching-check dd { margin-left: 0; }
+.exact-scenario fieldset { min-width: 0; border: 1px solid var(--border, #dbe1e9); border-radius: 12px; padding: 1rem; margin-block: 1rem; }
+.exact-scenario legend { font-weight: 600; padding-inline: .4rem; }
+.exact-scenario input, .exact-scenario select { max-width: 100%; min-width: 0; }
+.exact-scenario .scenario-checkbox { display: flex; flex-direction: row; align-items: center; gap: .6rem; text-align: left; }
+.exact-scenario .scenario-checkbox input { width: auto; }
+.exact-scenario-result { margin-block: 1rem; overflow-wrap: anywhere; }
+.exact-scenario-result dl div { display: flex; justify-content: space-between; gap: 1rem; }
+.exact-scenario-result dd { margin: 0; font-variant-numeric: tabular-nums; }

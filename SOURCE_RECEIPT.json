@@ -1,0 +1,30 @@
+{
+  "purpose": "Private source push only; NOT hosted synthetic-data/publication clearance",
+  "source_input_count": 174,
+  "copied_bytes_match_manifest": true,
+  "source_manifest_sha256": "945eed610d1cc4e4b104c429981d2ccf87e4db325bf8c47b4ab905ae1bfa4084",
+  "pattern_scan_findings": 0,
+  "scan_limitations": "Bounded common-secret patterns and exact input allowlist, not a comprehensive secret detection guarantee",
+  "excluded": [
+    ".env*",
+    ".local",
+    ".git",
+    "node_modules",
+    ".next*",
+    "qa-results",
+    "backend/.venv",
+    "backend/app/seed",
+    "backend/tests",
+    "backend/data",
+    "proposed migrations",
+    "backups",
+    "PostgreSQL directories",
+    "reports"
+  ],
+  "added_documentation": [
+    "README.md",
+    "DEPLOYMENT_STATUS.md",
+    ".gitignore"
+  ],
+  "deployment_ready": false
+}

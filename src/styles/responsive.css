@@ -1,0 +1,1324 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (min-width: 1600px) {
+  .journey-banner {
+    min-height: 305px;
+  }
+  .journey-content {
+    padding: 38px 40px;
+  }
+  .journey-content h2 {
+    font-size: 34px;
+  }
+  .journey-illustration {
+    margin-right: 40px;
+  }
+  .globe-art {
+    width: 210px;
+    height: 210px;
+  }
+  .campus-art {
+    height: 180px;
+  }
+  .compact .campus-art {
+    height: 145px;
+  }
+  .stat-card {
+    padding: 22px 24px;
+  }
+  .stat-card > strong {
+    font-size: 29px;
+  }
+}
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 218px;
+    padding-inline: 12px;
+  }
+  .app-main {
+    margin-left: 218px;
+  }
+  .topbar,
+  .workspace-main {
+    padding-inline: 26px;
+  }
+  .top-search {
+    display: none;
+  }
+  .dashboard-columns {
+    grid-template-columns: minmax(0, 1.6fr) minmax(250px, 1fr);
+    gap: 20px;
+  }
+  .panel {
+    padding: 20px;
+  }
+  .university-card {
+    padding: 0;
+  }
+  .stats-grid {
+    gap: 12px;
+  }
+  .stat-card {
+    padding: 16px;
+  }
+  .stat-top {
+    font-size: 9px;
+  }
+  .stat-card > strong {
+    font-size: 22px;
+  }
+  .stat-card > small {
+    font-size: 8px;
+  }
+  .university-grid {
+    gap: 16px;
+  }
+  .university-grid:not(.two) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card-bottom small {
+    font-size: 7px;
+  }
+  .hero-copy h1 {
+    font-size: 46px;
+  }
+  .hero-actions .button {
+    font-size: 11px;
+    padding: 13px 16px;
+  }
+  .landing-hero {
+    gap: 20px;
+    padding-inline: 40px;
+  }
+  .hero-globe {
+    width: 280px;
+    height: 280px;
+  }
+  .hero-note {
+    right: 0;
+    top: 175px;
+    padding: 12px 16px;
+  }
+  .destination-card {
+    width: 270px;
+    left: 10px;
+    bottom: 25px;
+  }
+  .hero-orbit {
+    width: 350px;
+    height: 350px;
+    top: -10px;
+  }
+  .hero-orbit.inner {
+    width: 410px;
+    height: 410px;
+    top: -40px;
+  }
+  .hero-coordinate {
+    font-size: 7px;
+  }
+  .promise-strip {
+    gap: 25px;
+    padding-inline: 30px;
+  }
+  .promise-strip > span {
+    font-size: 7px;
+  }
+  .preview-section {
+    gap: 40px;
+    padding-inline: 40px;
+  }
+  .trust-section,
+  .final-cta {
+    margin-inline: 40px;
+  }
+  .marketing h2 {
+    font-size: 30px;
+  }
+  .journey-illustration {
+    min-width: 270px;
+  }
+  .assistant-layout {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+  .financial-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(270px, 1fr);
+  }
+  .financial-layout .form-grid {
+    gap: 18px 14px;
+  }
+  .budget-summary {
+    padding: 25px;
+  }
+  .budget-total {
+    font-size: 33px;
+  }
+}
+@media (max-width: 1000px) {
+  .dashboard-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dashboard-columns > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .dashboard-columns > div:nth-child(2) > .panel {
+    margin: 0;
+  }
+  .journey-content {
+    padding: 28px;
+  }
+  .journey-content h2 {
+    font-size: 25px;
+  }
+  .journey-illustration {
+    min-width: 230px;
+  }
+  .globe-art {
+    right: 25px;
+    width: 160px;
+    height: 160px;
+    top: 60px;
+  }
+  .floating-tag.destination {
+    top: 55px;
+    right: 0;
+    padding: 9px 11px;
+    transform: none;
+  }
+  .floating-tag.ambition {
+    left: 0;
+    bottom: 30px;
+    padding: 10px;
+    font-size: 8px;
+  }
+  .orbit {
+    right: -50px;
+  }
+  .orbit-two {
+    right: -100px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-card > strong {
+    font-size: 26px;
+  }
+  .stat-top {
+    font-size: 11px;
+  }
+  .stat-card > small {
+    font-size: 10px;
+  }
+  .page-header {
+    align-items: flex-start;
+  }
+  .page-header h1 {
+    font-size: 27px;
+  }
+  .page-header > .button {
+    font-size: 10px;
+    padding: 10px 12px;
+  }
+  .landing-hero {
+    padding-top: 45px;
+    min-height: 600px;
+  }
+  .hero-copy h1 {
+    font-size: 41px;
+    letter-spacing: -1.7px;
+  }
+  .hero-copy > p {
+    font-size: 12px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-visual {
+    height: 430px;
+  }
+  .hero-globe {
+    width: 240px;
+    height: 240px;
+    top: 45px;
+  }
+  .hero-note {
+    top: 210px;
+    padding: 10px;
+  }
+  .hero-note > span:last-child {
+    display: none;
+  }
+  .hero-note strong {
+    font-size: 12px;
+  }
+  .hero-note .icon-box {
+    width: 30px;
+    height: 30px;
+  }
+  .hero-orbit {
+    width: 290px;
+    height: 290px;
+    top: 15px;
+  }
+  .hero-orbit.inner {
+    width: 350px;
+    height: 350px;
+    top: -15px;
+  }
+  .destination-card {
+    width: 240px;
+    bottom: 0;
+    left: 0;
+  }
+  .destination-art {
+    height: 105px;
+  }
+  .hero-note small {
+    font-size: 6px;
+  }
+  .public-header nav {
+    gap: 20px;
+    font-size: 11px;
+  }
+  .public-header {
+    padding-inline: 35px;
+  }
+  .public-header .button {
+    font-size: 10px;
+  }
+  .promise-strip {
+    flex-wrap: wrap;
+    gap: 15px 25px;
+  }
+  .promise-strip > span {
+    width: 100%;
+    text-align: center;
+  }
+  .feature-grid {
+    gap: 15px;
+  }
+  .feature-card {
+    padding: 22px;
+  }
+  .feature-card h3 {
+    font-size: 16px;
+  }
+  .marketing-heading {
+    align-items: flex-start;
+  }
+  .marketing-heading > p {
+    max-width: 240px;
+  }
+  .marketing-section {
+    padding: 65px 35px;
+  }
+  .preview-section {
+    padding: 60px 35px;
+    gap: 30px;
+  }
+  .preview-content {
+    padding: 20px;
+  }
+  .preview-banner {
+    padding: 18px;
+  }
+  .preview-banner strong {
+    font-size: 20px;
+  }
+  .preview-banner svg {
+    width: 60px;
+  }
+  .marketing h2 {
+    font-size: 28px;
+  }
+  .trust-section,
+  .final-cta {
+    margin-inline: 35px;
+  }
+  .trust-section {
+    padding: 30px;
+  }
+  .trust-tags {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .faq-section {
+    padding: 65px 35px;
+    gap: 40px;
+  }
+  .final-cta h2 {
+    font-size: 36px;
+  }
+  .financial-layout {
+    grid-template-columns: 1fr;
+  }
+  .financial-layout > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .financial-layout > div > .assumptions {
+    margin: 0;
+  }
+  .financial-layout .budget-total {
+    font-size: 30px;
+  }
+  .financial-layout .budget-summary h2 {
+    font-size: 22px;
+  }
+  .financial-layout ~ .two-column {
+    grid-template-columns: 1fr;
+  }
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .assistant-layout {
+    grid-template-columns: 1fr;
+  }
+  .chat-history {
+    display: none;
+  }
+  .chat-welcome {
+    margin-top: 28px;
+  }
+  .settings-row {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 760px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 260px;
+    transition: transform 0.2s;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .sidebar-brand {
+    padding-bottom: 30px;
+  }
+  .mobile-only {
+    display: inline-flex;
+  }
+  .drawer-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    border: 0;
+    background: #11172b70;
+    z-index: 35;
+  }
+  .app-main {
+    margin-left: 0;
+  }
+  .topbar {
+    height: 65px;
+    padding: 0 20px;
+  }
+  .workspace-main {
+    padding: 20px 20px 0;
+  }
+  .topbar-actions {
+    gap: 5px;
+  }
+  .breadcrumb {
+    font-size: 10px;
+  }
+  .breadcrumb span {
+    padding: 0 8px;
+  }
+  .page-header {
+    margin: 24px 0;
+  }
+  .page-header h1 {
+    font-size: 27px;
+  }
+  .page-header .eyebrow {
+    font-size: 8px;
+  }
+  .page-header p {
+    font-size: 12px;
+  }
+  .journey-banner {
+    min-height: 260px;
+  }
+  .journey-illustration {
+    min-width: 250px;
+  }
+  .journey-content h2 {
+    font-size: 28px;
+  }
+  .hero-copy h1 {
+    font-size: 48px;
+  }
+  .landing-hero {
+    grid-template-columns: 1fr;
+    padding: 40px 28px;
+    gap: 30px;
+  }
+  .hero-copy {
+    max-width: 590px;
+  }
+  .hero-copy > p {
+    font-size: 14px;
+    max-width: 550px;
+  }
+  .hero-actions {
+    flex-direction: row;
+  }
+  .hero-actions .button {
+    font-size: 12px;
+  }
+  .hero-visual {
+    height: 390px;
+    max-width: 460px;
+    width: 100%;
+    margin: auto;
+  }
+  .hero-globe {
+    width: 270px;
+    height: 270px;
+    right: 55px;
+    top: 15px;
+  }
+  .hero-orbit {
+    right: 35px;
+    top: -5px;
+    width: 310px;
+    height: 310px;
+  }
+  .hero-orbit.inner {
+    right: 5px;
+    top: -35px;
+    width: 370px;
+    height: 370px;
+  }
+  .hero-note {
+    top: 160px;
+    right: 0;
+    padding: 14px;
+  }
+  .destination-card {
+    bottom: 0;
+    left: 20px;
+    width: 270px;
+  }
+  .hero-coordinate {
+    left: 20px;
+    top: 0;
+  }
+  .hero-visual-star {
+    bottom: 10px;
+    right: 20px;
+  }
+  .public-header {
+    padding: 22px 28px;
+  }
+  .public-header nav {
+    display: none;
+  }
+  .public-header .button {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .public-header .logo {
+    font-size: 27px;
+  }
+  .marketing-section {
+    padding: 55px 28px;
+  }
+  .marketing-heading {
+    display: block;
+  }
+  .marketing-heading > p {
+    max-width: none;
+    margin-top: 18px;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .marketing h2 {
+    font-size: 31px;
+  }
+  .preview-section {
+    grid-template-columns: 1fr;
+    padding: 50px 28px;
+    gap: 40px;
+  }
+  .preview-section > div > p {
+    max-width: 500px;
+  }
+  .product-preview {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .how-grid {
+    gap: 20px;
+  }
+  .how-grid h3 {
+    font-size: 16px;
+  }
+  .how-grid p {
+    font-size: 11px;
+  }
+  .trust-section {
+    margin: 0 28px;
+    padding: 28px;
+    gap: 20px;
+  }
+  .trust-section > .icon-box {
+    display: none;
+  }
+  .trust-section h2 {
+    font-size: 27px;
+  }
+  .faq-section {
+    grid-template-columns: 1fr;
+    padding: 55px 28px;
+    gap: 30px;
+  }
+  .final-cta {
+    margin: 0 28px 50px;
+    padding: 45px 22px;
+  }
+  .final-cta h2 {
+    font-size: 34px;
+  }
+  .public-footer {
+    padding: 10px 28px 30px;
+  }
+  .public-footer > div:nth-child(2) {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .assistant-layout {
+    min-height: 580px;
+  }
+  .chat-main {
+    padding: 15px;
+  }
+  .chat-messages {
+    height: 420px;
+  }
+  .financial-layout > div {
+    grid-template-columns: 1fr 1fr;
+  }
+  .detail-art {
+    height: 200px;
+  }
+}
+@media (max-width: 520px) {
+  .workspace-main {
+    padding: 17px 16px 0;
+  }
+  .topbar {
+    padding-inline: 12px;
+  }
+  .topbar-actions {
+    gap: 0;
+  }
+  .breadcrumb {
+    font-size: 9px;
+  }
+  .breadcrumb span {
+    padding: 0 5px;
+  }
+  .topbar-actions .icon-button {
+    min-width: 32px;
+    padding: 6px;
+  }
+  .demo-notice {
+    font-size: 9px;
+    align-items: flex-start;
+  }
+  .notice-detail {
+    display: block;
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .page-header {
+    flex-direction: column;
+    gap: 17px;
+    margin: 22px 0;
+  }
+  .page-header h1 {
+    font-size: 26px;
+  }
+  .page-header > .button {
+    font-size: 11px;
+  }
+  .journey-banner {
+    min-height: 300px;
+    display: block;
+  }
+  .journey-content {
+    padding: 25px;
+    max-width: 100%;
+  }
+  .journey-content h2 {
+    font-size: 28px;
+  }
+  .journey-content p {
+    font-size: 10px;
+    max-width: 245px;
+  }
+  .journey-illustration {
+    position: absolute;
+    right: -45px;
+    bottom: -30px;
+    width: 180px;
+    height: 150px;
+    min-width: 0;
+    opacity: 0.7;
+  }
+  .journey-illustration .globe-art {
+    width: 115px;
+    height: 115px;
+    right: 20px;
+    top: 12px;
+  }
+  .journey-illustration .floating-tag,
+  .journey-illustration .spark {
+    display: none;
+  }
+  .journey-illustration .orbit {
+    width: 180px;
+    height: 180px;
+    right: 0;
+    top: -20px;
+  }
+  .journey-illustration .orbit-two {
+    width: 230px;
+    height: 230px;
+    top: -45px;
+    right: -25px;
+  }
+  .journey-content .button {
+    position: relative;
+    z-index: 3;
+  }
+  .stats-grid {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    padding: 14px;
+  }
+  .stat-top {
+    font-size: 9px;
+    gap: 3px;
+  }
+  .stat-top .icon-box {
+    width: 22px;
+    height: 22px;
+  }
+  .stat-top .icon-box svg {
+    width: 15px;
+  }
+  .stat-card > strong {
+    font-size: 23px;
+    margin-top: 9px;
+  }
+  .stat-card > small {
+    font-size: 8px;
+    line-height: 1.7;
+  }
+  .section-caption {
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 23px;
+    font-size: 7px;
+  }
+  .subtle-toggle {
+    font-size: 8px;
+    max-width: 120px;
+    line-height: 1.6;
+  }
+  .panel {
+    padding: 20px;
+  }
+  .university-card {
+    padding: 0;
+  }
+  .dashboard-columns {
+    gap: 20px;
+  }
+  .dashboard-columns > div:nth-child(2) {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .section-heading h2 {
+    font-size: 16px;
+  }
+  .section-heading p {
+    font-size: 10px;
+  }
+  .section-heading .text-link {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .plan-steps {
+    margin: 22px -8px;
+  }
+  .plan-steps small {
+    font-size: 7px;
+    max-width: 65px;
+  }
+  .plan-steps strong {
+    font-size: 9px;
+  }
+  .plan-steps > div > span {
+    width: 30px;
+    height: 30px;
+  }
+  .plan-steps:before {
+    top: 15px;
+  }
+  .plan-nudge {
+    padding: 10px;
+    gap: 8px;
+  }
+  .plan-nudge p,
+  .plan-nudge strong {
+    font-size: 9px;
+  }
+  .plan-nudge .icon-box {
+    width: 27px;
+    height: 27px;
+  }
+  .university-grid.two,
+  .university-grid:not(.two) {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .compact .campus-art {
+    height: 145px;
+  }
+  .compact .university-body h3 {
+    font-size: 15px;
+  }
+  .compact .tags > span {
+    font-size: 9px;
+  }
+  .compact .card-bottom strong {
+    font-size: 13px;
+  }
+  .compact .card-bottom small {
+    font-size: 9px;
+  }
+  .compact .location {
+    font-size: 11px;
+  }
+  .compact .university-body {
+    padding: 21px;
+  }
+  .campus-art {
+    height: 165px;
+  }
+  .university-body h3 {
+    font-size: 16px;
+  }
+  .university-body .card-bottom small,
+  .university-body .tags > span {
+    font-size: 9px;
+  }
+  .workspace-footer {
+    font-size: 8px;
+    margin-top: 30px;
+    padding: 20px 0;
+  }
+  .explorer-toolbar {
+    gap: 8px;
+  }
+  .explorer-toolbar > .button {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+  .search-bar {
+    padding: 0 10px;
+    gap: 6px;
+  }
+  .search-bar input {
+    font-size: 10px;
+  }
+  .search-bar > svg {
+    width: 15px;
+    flex-shrink: 0;
+  }
+  .filters {
+    gap: 15px;
+    padding: 18px;
+  }
+  .filters > label:not(.check-inline) {
+    min-width: calc(50% - 15px);
+  }
+  .result-toolbar {
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .result-toolbar p {
+    font-size: 10px;
+  }
+  .result-toolbar p span {
+    display: block;
+  }
+  .sort-control {
+    font-size: 9px;
+    gap: 0;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .sort-control select {
+    font-size: 10px;
+    padding: 4px;
+  }
+  .scholarship-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+  .financial-layout {
+    gap: 18px;
+  }
+  .financial-layout > div {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .form-grid {
+    gap: 18px 14px;
+  }
+  .form-grid label {
+    font-size: 10px;
+  }
+  .form-grid input,
+  .form-grid select {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .financial-layout .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .financial-layout .number-input input {
+    padding-right: 85px;
+  }
+  .financial-layout .form-grid .full-field {
+    grid-column: auto;
+  }
+  .budget-summary h2 {
+    max-width: 250px !important;
+  }
+  .financial-layout .budget-total {
+    font-size: 38px;
+  }
+  .profile-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .form-footer .button {
+    width: 100%;
+  }
+  .resource-hero {
+    padding: 24px;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .resource-hero > svg {
+    width: 28px;
+    height: 28px;
+  }
+  .resource-hero h2 {
+    font-size: 20px;
+  }
+  .resource-hero p {
+    font-size: 11px;
+  }
+  .detail-facts {
+    grid-template-columns: 1fr;
+  }
+  .detail-grid {
+    gap: 18px;
+  }
+  .detail-art {
+    height: 180px;
+  }
+  .detail-grid th,
+  .detail-grid td {
+    font-size: 10px;
+    padding: 15px 10px;
+  }
+  .chat-main {
+    padding: 12px;
+  }
+  .chat-welcome h2 {
+    font-size: 24px;
+  }
+  .chat-welcome p {
+    font-size: 11px;
+  }
+  .chat-welcome .eyebrow {
+    font-size: 7px;
+  }
+  .chat-messages {
+    padding: 8px 3px;
+    height: 430px;
+  }
+  .chat-disclaimer {
+    font-size: 7px;
+  }
+  .chat-composer {
+    gap: 5px;
+    padding: 7px;
+  }
+  .chat-composer textarea {
+    font-size: 10px;
+    padding: 10px 6px;
+  }
+  .message {
+    gap: 8px;
+    font-size: 11px;
+  }
+  .message-avatar {
+    width: 25px;
+    height: 25px;
+  }
+  .settings-row {
+    gap: 18px;
+  }
+  .settings-stack h2 {
+    font-size: 14px;
+  }
+  .settings-stack .row {
+    align-items: flex-start;
+  }
+  .settings-stack p {
+    font-size: 11px;
+  }
+  .landing-hero {
+    padding: 30px 22px 45px;
+  }
+  .hero-copy h1 {
+    font-size: 42px;
+    letter-spacing: -1.8px;
+    margin-top: 22px;
+    line-height: 1.15;
+  }
+  .hero-copy > p {
+    font-size: 12px;
+  }
+  .hero-pill {
+    font-size: 6px;
+    letter-spacing: 0.7px;
+    padding: 7px 9px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  .hero-actions .button {
+    font-size: 12px;
+    padding: 14px 16px;
+  }
+  .hero-footnote {
+    font-size: 9px;
+  }
+  .hero-visual {
+    height: 350px;
+    margin-top: 10px;
+    max-width: 350px;
+  }
+  .hero-globe {
+    width: 230px;
+    height: 230px;
+    right: 30px;
+    top: 12px;
+  }
+  .hero-orbit {
+    width: 260px;
+    height: 260px;
+    top: -3px;
+    right: 16px;
+  }
+  .hero-orbit.inner {
+    width: 310px;
+    height: 310px;
+    top: -28px;
+    right: -9px;
+  }
+  .hero-coordinate {
+    left: 0;
+    font-size: 6px;
+  }
+  .hero-coordinate span {
+    font-size: 5px;
+  }
+  .hero-note {
+    top: 140px;
+    right: -2px;
+    padding: 11px;
+    gap: 8px;
+  }
+  .hero-note strong {
+    font-size: 11px;
+  }
+  .hero-note small {
+    font-size: 5px;
+  }
+  .destination-card {
+    width: 235px;
+    left: 5px;
+    bottom: 0;
+  }
+  .destination-art {
+    height: 105px;
+  }
+  .destination-card > div:last-child {
+    padding: 12px;
+  }
+  .destination-card h3 {
+    font-size: 10px;
+  }
+  .hero-visual-star {
+    font-size: 28px;
+    right: 7px;
+    bottom: 20px;
+  }
+  .public-header {
+    padding: 20px 22px;
+    gap: 10px;
+  }
+  .public-header .logo {
+    font-size: 25px;
+    gap: 7px;
+  }
+  .public-header .logo-mark {
+    width: 31px;
+    height: 31px;
+    border-radius: 9px;
+  }
+  .public-header .logo-mark svg {
+    width: 21px;
+  }
+  .public-header .logo small {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+  .public-header > .row {
+    gap: 3px;
+  }
+  .public-header .button {
+    font-size: 8px;
+    gap: 5px;
+    padding: 8px;
+    min-height: 34px;
+  }
+  .public-header .button svg {
+    width: 12px;
+  }
+  .public-header .icon-button {
+    min-width: 28px;
+    padding: 4px;
+  }
+  .promise-strip {
+    padding: 20px 22px;
+    gap: 12px 18px;
+  }
+  .promise-strip > span {
+    font-size: 6px;
+  }
+  .promise-strip > div {
+    font-size: 8px;
+    gap: 4px;
+  }
+  .promise-strip svg {
+    width: 11px;
+  }
+  .marketing-section {
+    padding: 48px 22px;
+  }
+  .marketing h2 {
+    font-size: 28px;
+    letter-spacing: -0.9px;
+  }
+  .marketing .eyebrow {
+    font-size: 7px;
+  }
+  .marketing-heading {
+    margin-bottom: 27px;
+  }
+  .marketing-heading > p {
+    font-size: 11px;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .feature-card {
+    padding: 25px;
+  }
+  .feature-card h3 {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  .feature-card p {
+    font-size: 12px;
+  }
+  .feature-card .icon-box {
+    width: 43px;
+    height: 43px;
+  }
+  .preview-section {
+    padding: 45px 22px;
+  }
+  .preview-section > div > p {
+    font-size: 12px;
+  }
+  .preview-content {
+    padding: 20px;
+  }
+  .preview-content h3 {
+    font-size: 17px;
+  }
+  .preview-banner {
+    padding: 17px;
+  }
+  .preview-banner strong {
+    font-size: 19px;
+  }
+  .preview-banner svg {
+    width: 50px;
+  }
+  .preview-stats {
+    gap: 9px;
+  }
+  .preview-stats > div {
+    padding: 12px;
+  }
+  .preview-stats strong {
+    font-size: 10px;
+  }
+  .preview-stats small {
+    font-size: 7px;
+  }
+  .preview-check {
+    font-size: 8px;
+    padding: 10px;
+  }
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 32px;
+  }
+  .how-grid > div {
+    position: relative;
+    padding-left: 62px;
+  }
+  .step-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 39px;
+    height: 39px;
+    font-size: 12px;
+  }
+  .how-grid h3 {
+    font-size: 17px;
+  }
+  .how-grid p {
+    font-size: 12px;
+    max-width: none;
+    margin-top: 7px;
+  }
+  .trust-section {
+    margin-inline: 22px;
+    padding: 25px;
+  }
+  .trust-section h2 {
+    font-size: 25px;
+  }
+  .trust-section p {
+    font-size: 11px;
+  }
+  .trust-tags {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .trust-tags span {
+    font-size: 10px;
+  }
+  .faq-section {
+    padding: 48px 22px;
+    gap: 25px;
+  }
+  .faq-section summary {
+    font-size: 12px;
+  }
+  .faq-section p,
+  .faq-section details p {
+    font-size: 11px;
+  }
+  .final-cta {
+    margin: 0 22px 40px;
+    padding: 40px 20px;
+  }
+  .final-cta h2 {
+    font-size: 29px;
+    margin: 17px 0 25px;
+  }
+  .final-cta .button {
+    font-size: 12px;
+    padding: 13px 18px;
+  }
+  .final-cta p {
+    font-size: 8px;
+  }
+  .public-footer {
+    padding: 10px 22px 25px;
+    gap: 25px;
+  }
+  .public-footer > div:nth-child(2) {
+    gap: 20px;
+    font-size: 10px;
+  }
+  .public-footer > small {
+    font-size: 8px;
+    margin-top: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (max-width: 760px) {
+  .sidebar {
+    visibility: hidden;
+  }
+  .sidebar.open {
+    visibility: visible;
+  }
+}

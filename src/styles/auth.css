@@ -1,0 +1,108 @@
+.auth-page {
+  max-width: 640px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+.auth-page h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+.auth-page form,
+.auth-stack {
+  display: grid;
+  gap: 1rem;
+}
+.auth-page label,
+.auth-field {
+  display: grid;
+  gap: 0.4rem;
+}
+.password-control {
+  display: flex;
+  gap: 0.5rem;
+}
+.password-control input {
+  min-width: 0;
+  flex: 1;
+}
+.auth-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.auth-progress {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+.auth-progress li {
+  flex: 1;
+  border-top: 4px solid var(--border);
+  padding-top: 0.5rem;
+}
+.auth-progress li.active {
+  border-color: var(--primary);
+  font-weight: 700;
+}
+.cloud-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.cloud-toolbar label {
+  display: grid;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 150px;
+}
+.privacy-preview {
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  background: var(--surface);
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.auth-page .panel {
+  padding: 2rem;
+}
+.auth-help {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.account-strip {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.75rem 0;
+}
+.onboarding-review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.onboarding-review div {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .auth-page {
+    margin: 1.5rem auto;
+  }
+  .auth-page .panel {
+    padding: 1.2rem;
+  }
+  .auth-progress li {
+    font-size: 0.7rem;
+  }
+  .onboarding-review {
+    grid-template-columns: 1fr;
+  }
+}

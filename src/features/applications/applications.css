@@ -1,0 +1,14 @@
+.journey { display: grid; gap: 1.25rem; min-width: 0; }
+.journey-panel { padding: clamp(1rem, 3vw, 2rem); display: grid; gap: 1rem; min-width: 0; overflow-wrap: anywhere; }
+.journey-fields { display: grid; gap: 1rem; min-width: 0; }
+.journey-fields label, .journey-panel > details > label { display: grid; gap: .4rem; min-width: 0; font-weight: 600; }
+.journey input, .journey select { min-width: 0; max-width: 100%; width: 100%; padding: .7rem; border: 1px solid var(--border, #cbd5e1); border-radius: .5rem; background: var(--surface, white); color: inherit; }
+.journey button { white-space: normal; min-height: 44px; }
+.journey .button { justify-self: start; max-width: 100%; }
+.journey-cards, .journey-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; }
+.journey-stats p { padding: 1rem; background: var(--surface-muted, #f1f5f9); border-radius: .75rem; }
+.journey-stats strong { display: block; font-size: 1.8rem; }
+.journey-item { border-top: 1px solid var(--border, #cbd5e1); padding: 1.25rem 0; display: grid; gap: .75rem; }
+.journey summary { cursor: pointer; padding: .8rem 0; font-weight: 600; }
+.journey-item-form { border: 1px solid var(--border, #cbd5e1); padding: 1rem; border-radius: .75rem; }
+.journey [role="alert"] { color: #b42318; }

@@ -1,0 +1,16 @@
+.env*
+.local/
+.git/
+node_modules/
+.next*/
+backend/.venv/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+*.log
+*.dump
+*.backup
+qa-results/
+coverage/
+backend/data/
+backend/app/seed/
