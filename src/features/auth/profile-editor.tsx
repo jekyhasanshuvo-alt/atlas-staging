@@ -54,9 +54,31 @@ export function CloudProfileEditor({
 }: {
   onboarding?: boolean;
 }) {
+  const { workspace, loading } = useStudent();
+  if (!workspace) {
+    return (
+      <section className="panel auth-stack" role="status">
+        {loading ? (
+          <p>Loading your account profile…</p>
+        ) : (
+          <p>Your account profile is unavailable. Sign in to load your profile.</p>
+        )}
+      </section>
+    );
+  }
+  return <LoadedProfileEditor onboarding={onboarding} initialProfile={workspace.profile} />;
+}
+
+function LoadedProfileEditor({
+  onboarding,
+  initialProfile,
+}: {
+  onboarding: boolean;
+  initialProfile: CloudProfile;
+}) {
   const s = useStudent(),
     router = useRouter();
-  const [profile, setProfile] = useState<CloudProfile>(s.workspace!.profile),
+  const [profile, setProfile] = useState<CloudProfile>(initialProfile),
     [step, setStep] = useState(() => {
       const first = groups.findIndex((group) =>
         group.some(
@@ -64,8 +86,8 @@ export function CloudProfileEditor({
             "required" in f &&
             f.required &&
             (f.key === "budget_amount"
-              ? Number(s.workspace!.profile[f.key]) <= 0
-              : String(s.workspace!.profile[f.key as keyof CloudProfile]).trim()
+              ? Number(initialProfile[f.key]) <= 0
+              : String(initialProfile[f.key as keyof CloudProfile]).trim()
                   .length < 2),
         ),
       );

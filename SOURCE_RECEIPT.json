@@ -1,6 +1,6 @@
 {
-  "status": "LOCAL CANDIDATE ONLY / NOT PUSHED / NOT DEPLOYED",
-  "files": 190,
+  "status": "LOCAL FIX CANDIDATE / NOT YET PUSHED OR DEPLOYED",
+  "files": 191,
   "artifact_scan_files": 392,
   "artifact_forbidden_matches": 0,
   "source_secret_pattern_matches": 0,
@@ -725,8 +725,8 @@
     },
     {
       "path": "src/features/auth/profile-editor.tsx",
-      "bytes": 8340,
-      "sha256": "87d4a64d0c9b1e3da382c577f00d29be21be6d1a13dba9c3c0999eb63caea439"
+      "bytes": 8892,
+      "sha256": "602aa14d0c7699891772e0c2c19d51b74ed4dd0aec22f84898287c21776d31c1"
     },
     {
       "path": "src/features/dashboard/dashboard.tsx",
@@ -957,6 +957,12 @@
       "path": "vitest.config.ts",
       "bytes": 249,
       "sha256": "8c13ddc625cee85e08644240dd716a5d32ffa0fc15eda71a0ed1061aa9e6b2ed"
+    },
+    {
+      "path": "tests/profile-editor.test.ts",
+      "bytes": 2055,
+      "sha256": "ae8c75780fea4db40e973c1721316e255c377585f539b674283853370a13450e"
     }
-  ]
+  ],
+  "followup_change": "Guard missing workspace before profile editor initialization; four focused SSR regression tests."
 }
