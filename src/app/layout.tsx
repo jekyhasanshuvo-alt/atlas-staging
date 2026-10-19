@@ -24,6 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
+        {process.env.NEXT_PUBLIC_ATLAS_STAGING_DEMO === "true" && (
+          <p role="note" className="staging-demo-notice">
+            Fictional hackathon demo — no real student data or verified awards.
+            The catalog is empty. Enter your own financial assumptions; initial zeros
+            are placeholders, not known free costs. Funding and FX are not guaranteed.
+          </p>
+        )}
         <StudentProvider>{children}</StudentProvider>
       </body>
     </html>

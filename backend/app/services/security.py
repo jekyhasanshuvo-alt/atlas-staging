@@ -84,6 +84,9 @@ def authenticated(request: Request, db=Depends(get_session)):
         or session.expires_at <= now()
     ):
         raise HTTPException(401, "Your session has expired. Sign in again.")
+    settings = request.app.state.settings
+    if settings.staging_demo and user.email not in settings.staging_synthetic_emails:
+        raise HTTPException(403, "This account is unavailable in the synthetic demo.")
     if request.method not in {"GET", "HEAD", "OPTIONS"} and not hmac.compare_digest(
         request.headers.get("X-Atlas-CSRF", "").encode("utf-8"), csrf_token(raw).encode("ascii")
     ):

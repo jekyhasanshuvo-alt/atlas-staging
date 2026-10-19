@@ -1,30 +1,962 @@
 {
-  "purpose": "Private source push only; NOT hosted synthetic-data/publication clearance",
-  "source_input_count": 174,
-  "copied_bytes_match_manifest": true,
-  "source_manifest_sha256": "945eed610d1cc4e4b104c429981d2ccf87e4db325bf8c47b4ab905ae1bfa4084",
-  "pattern_scan_findings": 0,
-  "scan_limitations": "Bounded common-secret patterns and exact input allowlist, not a comprehensive secret detection guarantee",
-  "excluded": [
-    ".env*",
-    ".local",
-    ".git",
-    "node_modules",
-    ".next*",
-    "qa-results",
-    "backend/.venv",
-    "backend/app/seed",
-    "backend/tests",
-    "backend/data",
-    "proposed migrations",
-    "backups",
-    "PostgreSQL directories",
-    "reports"
-  ],
-  "added_documentation": [
-    "README.md",
-    "DEPLOYMENT_STATUS.md",
-    ".gitignore"
-  ],
-  "deployment_ready": false
+  "status": "LOCAL CANDIDATE ONLY / NOT PUSHED / NOT DEPLOYED",
+  "files": 190,
+  "artifact_scan_files": 392,
+  "artifact_forbidden_matches": 0,
+  "source_secret_pattern_matches": 0,
+  "excluded_path_matches": 0,
+  "limitations": "Explicit source allowlist and bounded patterns; not a universal secret detector or hosted verification.",
+  "release_only_change": "src/data/mock/index.ts re-exports synthetic staging fixtures; default operational working source retained.",
+  "entries": [
+    {
+      "path": ".gitattributes",
+      "bytes": 74,
+      "sha256": "9879b7c5a0b4d6b722f5fbfb1223b72402f92b843bf6b6ceb2afc8b070c81a74"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 182,
+      "sha256": "8e09428b51b66de7e81efe16252dab1fb58fc8fdef37057c670c81c6a755e2af"
+    },
+    {
+      "path": ".node-version",
+      "bytes": 8,
+      "sha256": "2722b61f414f07f08be7f1f1316012813818f26f1c40d6a24a748686cec7d2ff"
+    },
+    {
+      "path": "backend/.python-version",
+      "bytes": 7,
+      "sha256": "11418a5b37ee3358335edfaf2c728355c3a955d040aee91fa881842b8891cb9c"
+    },
+    {
+      "path": "backend/alembic/env.py",
+      "bytes": 1196,
+      "sha256": "fccb5c659d6b5d7ab869ed738ff303938280ada9abe5d8cf6255ab9936fd3192"
+    },
+    {
+      "path": "backend/alembic/script.py.mako",
+      "bytes": 419,
+      "sha256": "02f7921b89cf829cbcce6069fe5456886ed03db86da4f7c31bfc70cba7e5d9d0"
+    },
+    {
+      "path": "backend/alembic/versions/0001_initial_catalog.py",
+      "bytes": 19261,
+      "sha256": "18d48b87a7d6b3c25173b51d6fc16a08b03b0291839c6b15c1e3b256c59fa80c"
+    },
+    {
+      "path": "backend/alembic/versions/0002_student_identity_workspace.py",
+      "bytes": 17310,
+      "sha256": "ded8d0508f3fa7c1605ffa6b579735e1d14cd5a5a2d2855699ceb7ee047482cd"
+    },
+    {
+      "path": "backend/alembic/versions/0003_field_review_history.py",
+      "bytes": 4893,
+      "sha256": "9a41cc50fa5dc6d93f4decd66470ad374ebcbdd4123bd533062022cdebb4ba71"
+    },
+    {
+      "path": "backend/alembic/versions/0004_scholarship_review_foundation.py",
+      "bytes": 8431,
+      "sha256": "7fa85d69567548908c040e5ace5aa90274b99e87d65611e7f110b41f14fa97a3"
+    },
+    {
+      "path": "backend/alembic.ini",
+      "bytes": 544,
+      "sha256": "9d0ba4a83f6ff826ae0b22681c94aec3093d1ce26a3252e30fac9a31b83d4d44"
+    },
+    {
+      "path": "backend/app/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/advisor/__init__.py",
+      "bytes": 87,
+      "sha256": "5863b2b65d301aa9bfd5de77e86d66662653099c169650406b1bbbac74139333"
+    },
+    {
+      "path": "backend/app/advisor/provider.py",
+      "bytes": 1218,
+      "sha256": "8d49ed925996d3c39e1135cc823baeecf6239d4b51bdf2f6fe739b7205d40abc"
+    },
+    {
+      "path": "backend/app/advisor/retrieval.py",
+      "bytes": 2506,
+      "sha256": "5e31c3288b7277fedbc05c706342b51241e8b1093738b6ee1f0918758cfdd7fa"
+    },
+    {
+      "path": "backend/app/advisor/router.py",
+      "bytes": 4045,
+      "sha256": "7ec6579ee1e5cfe5e48ff660f0c75a5b3cebb6657a90d1728380af1b05107306"
+    },
+    {
+      "path": "backend/app/advisor/schemas.py",
+      "bytes": 6305,
+      "sha256": "b1c6554170d23410f6cc05dcddfe719cd27a76194eb791769388f87706fc59c8"
+    },
+    {
+      "path": "backend/app/advisor/service.py",
+      "bytes": 13870,
+      "sha256": "9a50786447f41a6446bf43aff3e13a9234c56e459cd9a455e1b99b5566ca9909"
+    },
+    {
+      "path": "backend/app/api/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/api/financial_scenario.py",
+      "bytes": 510,
+      "sha256": "9036884123ac9544c659f7fb8b8395659f85f04717edf869eeef140166f2bde8"
+    },
+    {
+      "path": "backend/app/api/intelligence.py",
+      "bytes": 3399,
+      "sha256": "e17c08527666ad8cc6e76071a7b120a3707c01f09c5d2ef54d8cf51985fa77a4"
+    },
+    {
+      "path": "backend/app/api/profile_intelligence.py",
+      "bytes": 1334,
+      "sha256": "e06c03c9a2613d5ddf78d757ea40f551ed8bafcccfb09fefc9db7d295b16559a"
+    },
+    {
+      "path": "backend/app/api/scholarships_v2.py",
+      "bytes": 2493,
+      "sha256": "62cccdf8ee3fd196841412abcca011c52d3c5342a94459f67212ea2fc777f05a"
+    },
+    {
+      "path": "backend/app/api/staging.py",
+      "bytes": 1220,
+      "sha256": "18361645107b8956bf74cdc9c3a63fd676174eabdc3b954abee82b4884b434ea"
+    },
+    {
+      "path": "backend/app/api/v1/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/api/v1/auth.py",
+      "bytes": 10554,
+      "sha256": "c25b836193972920ea8816d401e6f4cf1947a08797b92a14acc17943dc006562"
+    },
+    {
+      "path": "backend/app/api/v1/endpoints/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/api/v1/router.py",
+      "bytes": 5640,
+      "sha256": "f84231b158405b4eb1055bb8452e33529f0762b28ca27dcb4fced6b68b5ad4a5"
+    },
+    {
+      "path": "backend/app/api/v1/workspace.py",
+      "bytes": 22551,
+      "sha256": "0e56ed20aebd6e3a9336f7d79a45ad5cbb3d4437af9ffd7f502978162f455cb4"
+    },
+    {
+      "path": "backend/app/cleanup.py",
+      "bytes": 1115,
+      "sha256": "3c0c8e08bb6123a95bb6c503ca4174268bb43d0a005715a0e0adf09e582c3edd"
+    },
+    {
+      "path": "backend/app/core/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/core/config.py",
+      "bytes": 8168,
+      "sha256": "c9f4b2f96e5bcd092a1c1838d4c5c262e6d9c714bd3f7bc3c949931f6ea6850c"
+    },
+    {
+      "path": "backend/app/curated/__init__.py",
+      "bytes": 51,
+      "sha256": "06ed6823dfd6729e899b018ddc81a6536f4c391b4cac2329fec5662186c66ee0"
+    },
+    {
+      "path": "backend/app/curated/__main__.py",
+      "bytes": 5185,
+      "sha256": "5f84a90beb6d68c3a1a990de9504d333a1104b2f8adb63587a2103222cf70dbc"
+    },
+    {
+      "path": "backend/app/db/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/db/base.py",
+      "bytes": 820,
+      "sha256": "0d993bcfd19af9979dc95a22a90d4097b0b16cb34223f1905f39a74f6ce49c1b"
+    },
+    {
+      "path": "backend/app/db/session.py",
+      "bytes": 807,
+      "sha256": "fe1377fc180e554a6c024d4318cd6c76b3ccf8250444c24396cc07ae0215c13c"
+    },
+    {
+      "path": "backend/app/experimental/__init__.py",
+      "bytes": 82,
+      "sha256": "0348f782484ac191d115ebf933fcd28267cb41616c739918d4eff3fa116a624e"
+    },
+    {
+      "path": "backend/app/experimental/evidence.py",
+      "bytes": 7937,
+      "sha256": "30f3757554aa73087144c31f1a6132521223a75e56372edad30e7e8a9dcc9937"
+    },
+    {
+      "path": "backend/app/experimental/gate.py",
+      "bytes": 1735,
+      "sha256": "cb51656747aaf134404525132ba2bc7538f07a613dc819971167699413d2dcc2"
+    },
+    {
+      "path": "backend/app/experimental/models.py",
+      "bytes": 10634,
+      "sha256": "a1dd6e7bed20e9652cda7155d7d32d36957117b3014c1b7ffa03d1be9de609fe"
+    },
+    {
+      "path": "backend/app/experimental/router.py",
+      "bytes": 4549,
+      "sha256": "9b4e9c82ef1aa2a124f6bebedeefcef35f6c0d3d09d57f4e60175c19bfdfcb7c"
+    },
+    {
+      "path": "backend/app/experimental/schemas.py",
+      "bytes": 15720,
+      "sha256": "2fa135ff553f6a1f1da3f2bcc21f24c7908fd23cc2bf9a9f1372acbd4814185e"
+    },
+    {
+      "path": "backend/app/experimental/service.py",
+      "bytes": 10167,
+      "sha256": "bf0714afe570fa549f80d9f87f491cc4968d3b41c907ba3125583919635020db"
+    },
+    {
+      "path": "backend/app/journey/__init__.py",
+      "bytes": 81,
+      "sha256": "aeacd66750f923c59654b9e5274d271af11c86af41e7b2e641ecd98f5bf923d3"
+    },
+    {
+      "path": "backend/app/journey/gate.py",
+      "bytes": 1283,
+      "sha256": "732765d74e2c0d53d3c68351944f654cd107ae3f9dddb0c8669b44b9bd7eb5e2"
+    },
+    {
+      "path": "backend/app/journey/models.py",
+      "bytes": 6463,
+      "sha256": "6005545980534878053c588dbcf742e6734336f9f1e22bb0463507ff97cf1604"
+    },
+    {
+      "path": "backend/app/journey/router.py",
+      "bytes": 4222,
+      "sha256": "f90e5f6df11525298ab30484e503e14eb36abb04f9c86eb0522e4846d97a151e"
+    },
+    {
+      "path": "backend/app/journey/schemas.py",
+      "bytes": 7421,
+      "sha256": "4627013fac80bf79faa313b1baf64d2b8946073a68fdb5385026342f73ab157f"
+    },
+    {
+      "path": "backend/app/journey/service.py",
+      "bytes": 13364,
+      "sha256": "2ed9b29ca1270e7dbc0f8f2e1efdfbb1ab2cf97f962adf85117cb20e780385bd"
+    },
+    {
+      "path": "backend/app/main.py",
+      "bytes": 10426,
+      "sha256": "d9105cda61fd3c08911bf5b0fcb987e585f931832c591546ee3e871883f4a92f"
+    },
+    {
+      "path": "backend/app/models/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/models/catalog.py",
+      "bytes": 19917,
+      "sha256": "abe90be7a0bcbd9c40c49b9354ce5774b9fdf14afb723846cec1cf3b10282a3f"
+    },
+    {
+      "path": "backend/app/models/student.py",
+      "bytes": 9617,
+      "sha256": "9d85199097d232df2fc16a513ddf6ef56cc59438ba37c84e604791647a18773e"
+    },
+    {
+      "path": "backend/app/repositories/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/repositories/catalog.py",
+      "bytes": 10371,
+      "sha256": "ef171eeec497fa0d6886f1a0fce82a7da27599e3a99dfcfff9577e8c947a2c2f"
+    },
+    {
+      "path": "backend/app/review/__init__.py",
+      "bytes": 57,
+      "sha256": "4cb785fe304a692845405bbe0763fa203c45a9c20ed821dff2f577288c4f70a0"
+    },
+    {
+      "path": "backend/app/review/__main__.py",
+      "bytes": 3053,
+      "sha256": "c30cafa3f7648c8cdd3505d67ec496452a1982009c5d736189f67824126466f0"
+    },
+    {
+      "path": "backend/app/schemas/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/schemas/catalog.py",
+      "bytes": 3353,
+      "sha256": "fc1292548ac66ea435bdb007841162701720ab72f8f1cf6ba953ff32fb553666"
+    },
+    {
+      "path": "backend/app/schemas/curated.py",
+      "bytes": 8652,
+      "sha256": "7820d6f520f295f08a61518861becbb70634bf5ff9ccee5f49ac0198d19f59a8"
+    },
+    {
+      "path": "backend/app/schemas/financial_scenario.py",
+      "bytes": 1800,
+      "sha256": "2caa52e0afd9c7664d651d91a817b7323be030bb288c75f1ff40ef9fb6889362"
+    },
+    {
+      "path": "backend/app/schemas/intelligence.py",
+      "bytes": 1372,
+      "sha256": "532f6d3400589f8869f5ad3354acc0c38d35ad8a712691259e72840f3bcadd2e"
+    },
+    {
+      "path": "backend/app/schemas/profile_intelligence.py",
+      "bytes": 2748,
+      "sha256": "226b608e77559988be73ffca171c5b78c1e0a4cc43b9e1d36bee0fecb51a9673"
+    },
+    {
+      "path": "backend/app/schemas/scholarship.py",
+      "bytes": 12869,
+      "sha256": "249ba69610b54a18a1ee073ee8d5e9eb747bec5627fb86d5395d684982faf684"
+    },
+    {
+      "path": "backend/app/schemas/scholarship_curated.py",
+      "bytes": 4291,
+      "sha256": "51384868c328851672e34690bb595b5f440875540293ce8b705fd23180a14125"
+    },
+    {
+      "path": "backend/app/schemas/scholarship_public.py",
+      "bytes": 664,
+      "sha256": "0bec84af8d6ea5ac65ea447bc45b95744e623b9af2eec25b2ffdd62efa11cdc7"
+    },
+    {
+      "path": "backend/app/schemas/student.py",
+      "bytes": 5898,
+      "sha256": "5f106d092a3b3692c0c1a83f26bb7cdf860b232c173de25f34878c38f86e771f"
+    },
+    {
+      "path": "backend/app/services/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend/app/services/curated_import.py",
+      "bytes": 9845,
+      "sha256": "20da081758f53049ae43d4c9d3e1559fa2b4d40f8d866d062b43b211daafbabc"
+    },
+    {
+      "path": "backend/app/services/email.py",
+      "bytes": 2129,
+      "sha256": "3057a40fc6d6f91496a94b0b33b263dc991a130c27a25887a3ec485782ec0ecb"
+    },
+    {
+      "path": "backend/app/services/financial_scenario.py",
+      "bytes": 4060,
+      "sha256": "4d4409dde395d3a57362d72b50d315e0a6da3aaaffed2e576dc06c0732e519eb"
+    },
+    {
+      "path": "backend/app/services/intelligence.py",
+      "bytes": 9851,
+      "sha256": "3aaa86bb3725a965782fe2499dd575c6d0178a0aa023ca68d1c48284764a936f"
+    },
+    {
+      "path": "backend/app/services/profile_intelligence.py",
+      "bytes": 11753,
+      "sha256": "9933b2bc9348c2aad154250358990b574b84639fece33b05322fe09d9588b162"
+    },
+    {
+      "path": "backend/app/services/review.py",
+      "bytes": 11339,
+      "sha256": "abbb62f07f75cca9d78aed97f76703bfadcbc89bc94776cfae434e24e7bf2d9b"
+    },
+    {
+      "path": "backend/app/services/scholarship_import.py",
+      "bytes": 8271,
+      "sha256": "b2dc794f4a93e537ae970e297848e22fc018ae4312a47d9d544aec0f181dd550"
+    },
+    {
+      "path": "backend/app/services/scholarship_public.py",
+      "bytes": 7680,
+      "sha256": "0db08ef8f807c34349412413d8e3100540c22b07a8a59ed077f478305c46f8ed"
+    },
+    {
+      "path": "backend/app/services/security.py",
+      "bytes": 4076,
+      "sha256": "a8d158a00f5daa3ed38eb63cf648490c8076157a82e9ae25a4aadefb9ad2ac5e"
+    },
+    {
+      "path": "backend/app/services/serialization.py",
+      "bytes": 9149,
+      "sha256": "8c34e84f40d724b28760d2bde2123c6680200f0080be5cd78e2f214233f3dc73"
+    },
+    {
+      "path": "backend/app/services/staging_mail.py",
+      "bytes": 966,
+      "sha256": "136eaf4dc95bcb7d36152286496bed6edc291f875a0a1b809feef2a4d12b560c"
+    },
+    {
+      "path": "backend/pyproject.toml",
+      "bytes": 847,
+      "sha256": "6c28974f2b4966fc5633bf168ea952161db94a2ce8690bcf8aa6b741be53bc49"
+    },
+    {
+      "path": "backend/requirements.lock",
+      "bytes": 753,
+      "sha256": "97f850d74b8b4c40dabf999f9f2d158ea8928f263115a228c4f76d67e8f40ac6"
+    },
+    {
+      "path": "backend/tests_offline/test_staging_demo.py",
+      "bytes": 11339,
+      "sha256": "4831b52eccd50783c57c6061c7578fea819f927be25a5946b69a11b0aca6578f"
+    },
+    {
+      "path": "DEPLOYMENT_STATUS.md",
+      "bytes": 4850,
+      "sha256": "ac97689b589b5a5d77a6b57d83fe561ea678e1787e2185a66c68169b6bec2074"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "bytes": 393,
+      "sha256": "983a815cb9facd8b45a4ab8fba087bdcbe5db98686f0cb286a827be0b8f332e6"
+    },
+    {
+      "path": "next-env.d.ts",
+      "bytes": 296,
+      "sha256": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc"
+    },
+    {
+      "path": "next.config.ts",
+      "bytes": 414,
+      "sha256": "4db3fe0c86b408d3e3de725b9089896191642654ad63fe63e16d39035e31d1df"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 275924,
+      "sha256": "6478da3edff92a46a742240d57f8422a7c87821591339569777ea45e12957d76"
+    },
+    {
+      "path": "package.json",
+      "bytes": 848,
+      "sha256": "e182af9aec8177460411742ff3f76685da4f07a3a3d114d1f0aa023cc5e21ae8"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "bytes": 83,
+      "sha256": "b783348d5618047d0f37e12acd15c5a2c5f02809d8711e0764c9cea52750346c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 593,
+      "sha256": "790fbc389380a4f437fe8fb5808a6da02616e3ffaca5a49d32262d7d08d952dc"
+    },
+    {
+      "path": "src/app/(auth)/forgot-password/page.tsx",
+      "bytes": 130,
+      "sha256": "c307b462d7476bbdb532c25f04e9982ad7f35d27fb746a08a0933e686170b95f"
+    },
+    {
+      "path": "src/app/(auth)/login/page.tsx",
+      "bytes": 120,
+      "sha256": "eb779e37429213675e5372345bc9238362d54e01943a3055262efb1f0ec7a6f4"
+    },
+    {
+      "path": "src/app/(auth)/reset-password/page.tsx",
+      "bytes": 129,
+      "sha256": "9f6a10f22f4728b616dedeb0266976da5eb0d011beb9cf2d12c3f08b3d828f82"
+    },
+    {
+      "path": "src/app/(auth)/signup/page.tsx",
+      "bytes": 121,
+      "sha256": "afb564705c9b51dd15334f95f3fec26198ed9d46afbdef750249f62b6351b374"
+    },
+    {
+      "path": "src/app/(auth)/verify-email/page.tsx",
+      "bytes": 127,
+      "sha256": "3094424271d58311698a6de1bdb166798bacb3c6f2036963ca1beb292609c362"
+    },
+    {
+      "path": "src/app/(marketing)/layout.tsx",
+      "bytes": 207,
+      "sha256": "5d5d5dda54e8d59ac521754a8bc562812de40a8bf5cf363a1c814495b181a47a"
+    },
+    {
+      "path": "src/app/(marketing)/page.tsx",
+      "bytes": 12170,
+      "sha256": "d1052f3964c4de58a7a2fa11434c425c02b219a0425c700bafb5c6f6061f133b"
+    },
+    {
+      "path": "src/app/(student)/advisor/page.tsx",
+      "bytes": 186,
+      "sha256": "6700b98183ec8e903a8cee9a8aca49478fd87d375d09a628556c9cee111c4ee4"
+    },
+    {
+      "path": "src/app/(student)/applications/[id]/page.tsx",
+      "bytes": 259,
+      "sha256": "ffa0e16612bd02eaa054702bcaf1e9889b8197d21072137210858f712d0e0aa9"
+    },
+    {
+      "path": "src/app/(student)/applications/new/page.tsx",
+      "bytes": 161,
+      "sha256": "87f493691912b4c7e5f2b933f93d2c14ae6bec1257091f935ea183bfc06a8efa"
+    },
+    {
+      "path": "src/app/(student)/applications/page.tsx",
+      "bytes": 153,
+      "sha256": "3def9481689dc799d8c83de3c715e6775893f411cf6a1575be22d62b12dc1031"
+    },
+    {
+      "path": "src/app/(student)/assistant/page.tsx",
+      "bytes": 175,
+      "sha256": "6c01d1f218b26575568e0b2e4f6a13c60901293556c19f7c3a666c8cbd0c4707"
+    },
+    {
+      "path": "src/app/(student)/career/page.tsx",
+      "bytes": 191,
+      "sha256": "ec18ed14d0d39a8d9f29799a3a61a9b93719bbdd1e027b2e118a3a50cbba41f7"
+    },
+    {
+      "path": "src/app/(student)/compare/page.tsx",
+      "bytes": 205,
+      "sha256": "6299197ff595ba74bab968ae6d3dad0c2ae72b2a19d87e5df76365951af5d45c"
+    },
+    {
+      "path": "src/app/(student)/dashboard/loading.tsx",
+      "bytes": 123,
+      "sha256": "09a910b5fc17ee45562565d001c244ad81f80a99dc351c94b453b3fd3856359f"
+    },
+    {
+      "path": "src/app/(student)/dashboard/page.tsx",
+      "bytes": 166,
+      "sha256": "a4d84b18e5c6d04bbc375e53a1164a7461424c14cba95977f53f11e05fbcb56c"
+    },
+    {
+      "path": "src/app/(student)/financial-twin/page.tsx",
+      "bytes": 190,
+      "sha256": "00a1a5505047c8b63ca9d34e5924cb27a94faef463ab5747b3d118683b290c25"
+    },
+    {
+      "path": "src/app/(student)/layout.tsx",
+      "bytes": 317,
+      "sha256": "ea3753030dfee3d3db4a0b68c91877f975c6770eb45fe7b86f84c501f9ba304c"
+    },
+    {
+      "path": "src/app/(student)/matches/[id]/page.tsx",
+      "bytes": 317,
+      "sha256": "41077a472e3688e7230a9bdabe0e9cdf77404096c32deded195c068720462a93"
+    },
+    {
+      "path": "src/app/(student)/matches/page.tsx",
+      "bytes": 195,
+      "sha256": "c1c4384fdeb184b3fbcbc48f7c0667486544cfa17207133d804a64d734338ad4"
+    },
+    {
+      "path": "src/app/(student)/onboarding/page.tsx",
+      "bytes": 148,
+      "sha256": "7723ef0464a185ba8eaeaa30a50423666d54544dd3a68c4e8129b60661ea3aa8"
+    },
+    {
+      "path": "src/app/(student)/profile/page.tsx",
+      "bytes": 162,
+      "sha256": "03bd1d9785b92762808069eebbda10b643594f5bd8718e6a6c7ec5c2660abe91"
+    },
+    {
+      "path": "src/app/(student)/programs/[id]/page.tsx",
+      "bytes": 331,
+      "sha256": "803ace14f449f2fab52ce37d2a01455a0e27c1e48f0dcacb496068fc7a7e5f7d"
+    },
+    {
+      "path": "src/app/(student)/programs/page.tsx",
+      "bytes": 215,
+      "sha256": "321d1b6570a2c9b2445baa1852eafb92553be68608e06f3e35bb2b0fbd0d4153"
+    },
+    {
+      "path": "src/app/(student)/scholarships/[id]/page.tsx",
+      "bytes": 276,
+      "sha256": "861f39f6fe0f37f2db42aed2763e054ee51d3db19c013d088630520bd94ad8f8"
+    },
+    {
+      "path": "src/app/(student)/scholarships/page.tsx",
+      "bytes": 196,
+      "sha256": "3962df95fbaf8d7392ea1dd23060f8b319d11b89d405d96efd6c8b34f69d22b0"
+    },
+    {
+      "path": "src/app/(student)/settings/page.tsx",
+      "bytes": 164,
+      "sha256": "bbfb876bb0085c34c9e32745726d6f07a4c00f2a12e362311a076c3e80786d03"
+    },
+    {
+      "path": "src/app/(student)/student-life/page.tsx",
+      "bytes": 182,
+      "sha256": "e82d94c660d01ae48be76c41245df7e5b50ac8a74593c20326f1049f5de1558e"
+    },
+    {
+      "path": "src/app/(student)/universities/[id]/page.tsx",
+      "bytes": 379,
+      "sha256": "2d8df06fb5cdaa16d0e00185f4927e60ff3b835fc8c19d11a09038c7680ed99c"
+    },
+    {
+      "path": "src/app/(student)/universities/page.tsx",
+      "bytes": 225,
+      "sha256": "b98bf1e653ebf9f18d4d2995e62f4b4ad5c40c214f5dfeca6d7b91b76cd27767"
+    },
+    {
+      "path": "src/app/api/v1/[...path]/route.ts",
+      "bytes": 317,
+      "sha256": "cdd54bee55f8d69f3ecae4e1d553b41473140e74feb4630b6818bc846f81fc81"
+    },
+    {
+      "path": "src/app/api/v2/[...path]/route.ts",
+      "bytes": 247,
+      "sha256": "cdd5d99b7715a93637fb30ec9615887543ea7999e493e9bf212f3e3225664f72"
+    },
+    {
+      "path": "src/app/error.tsx",
+      "bytes": 322,
+      "sha256": "e15a964d5f82ae64935d3d134c6b22f38b4c587038690960313965819293bc94"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "bytes": 1321,
+      "sha256": "29ed82a14080bbed190dea226f6e7286973fbca9a27a14dbe96b769fcf7df136"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "bytes": 340,
+      "sha256": "f687a1c4af81de473d42fa99655e79957141aec92b6c7a401f05f22b66f5cbbf"
+    },
+    {
+      "path": "src/components/auth/student-provider.tsx",
+      "bytes": 10674,
+      "sha256": "20c499fa9e8f8f34e763f4c631adedf6b2efbab2434e23e5910178f43f8a77ea"
+    },
+    {
+      "path": "src/components/layout/app-shell.tsx",
+      "bytes": 8462,
+      "sha256": "f4a09d6ea5aeb5d471261846eab24a8e8abaabeec06ef13bdab7f5caa45ad121"
+    },
+    {
+      "path": "src/components/layout/public-shell.tsx",
+      "bytes": 1559,
+      "sha256": "6a51df7e9c7b706ecec9c35f0f9579fe5882fca230f291c50d52261cc12d5ce0"
+    },
+    {
+      "path": "src/components/shared/catalog.tsx",
+      "bytes": 5425,
+      "sha256": "a207da476cb579d24aeb28a531ad9b151db406762b219fe38c496eb5438a9582"
+    },
+    {
+      "path": "src/components/shared/index.tsx",
+      "bytes": 10061,
+      "sha256": "a6abebf9fa240aa4c350029c923ca14c30e88714845cf698cac6225e2245a258"
+    },
+    {
+      "path": "src/data/mock/index.ts",
+      "bytes": 101,
+      "sha256": "3272098e7e8ffb0d38c14ae9c1c8827f4d4ff018d5ab81a6dfc2318755a36971"
+    },
+    {
+      "path": "src/data/staging-demo.ts",
+      "bytes": 1159,
+      "sha256": "0bd5c58df22be7510a72098c148f19760a34b7bac3435542939b4e643d0b54d6"
+    },
+    {
+      "path": "src/features/advisor/advisor.css",
+      "bytes": 1348,
+      "sha256": "116c4c6d45e5329340293cbad5cc121ff2d0a02d12af9cd3030c1e95b78d351a"
+    },
+    {
+      "path": "src/features/advisor/advisor.tsx",
+      "bytes": 13549,
+      "sha256": "820a0c31d98ac3efe1c12815fb7b5b64e37c75f04af13eeb3809aeb479a093b0"
+    },
+    {
+      "path": "src/features/applications/applications.css",
+      "bytes": 1310,
+      "sha256": "26a110adef9b549a5f787870b62975b773a76a7714045eb227e18651bb71db62"
+    },
+    {
+      "path": "src/features/applications/applications.tsx",
+      "bytes": 24371,
+      "sha256": "379bd98b6709691c99a8982982c5cc0475077e89686cff801580e34a5199db44"
+    },
+    {
+      "path": "src/features/assistant/assistant.tsx",
+      "bytes": 6777,
+      "sha256": "b547ad14457ecacc30c06a40d405a4972126b27b31fc1b32bf8de54c8944c8ee"
+    },
+    {
+      "path": "src/features/auth/account-settings.tsx",
+      "bytes": 10353,
+      "sha256": "342d129f0246794326d8b0de57522b87f1171eefb29004c94606eddc271c699d"
+    },
+    {
+      "path": "src/features/auth/account-strip.tsx",
+      "bytes": 877,
+      "sha256": "be84fa045ef8c9bff2d52c05dfbcfb2336975421e80e248b37522657768fde9a"
+    },
+    {
+      "path": "src/features/auth/auth.tsx",
+      "bytes": 8037,
+      "sha256": "9d83d6fba42ef1ee15cf4ab19a070091bc07edcaa2a7edf9d9a555c83fd0f624"
+    },
+    {
+      "path": "src/features/auth/cloud-dashboard.tsx",
+      "bytes": 3832,
+      "sha256": "3fa557437897de9ef728354d34210c6c88f115bb08bf15ed5b3f48770c704732"
+    },
+    {
+      "path": "src/features/auth/financial-controls.tsx",
+      "bytes": 5037,
+      "sha256": "48a5b2395b34c4f14969e11cffa73b8ae40d9721badc9a6554ba82d05e888b22"
+    },
+    {
+      "path": "src/features/auth/profile-editor.tsx",
+      "bytes": 8340,
+      "sha256": "87d4a64d0c9b1e3da382c577f00d29be21be6d1a13dba9c3c0999eb63caea439"
+    },
+    {
+      "path": "src/features/dashboard/dashboard.tsx",
+      "bytes": 12965,
+      "sha256": "5e3a290360dd184298ba4fb8cd59c40fa578ed889bd418a03be6c5ef8a09269a"
+    },
+    {
+      "path": "src/features/financial-twin/exact-scenarios.tsx",
+      "bytes": 9552,
+      "sha256": "03db56ad9d7ce2c53b61c79da32d3dfa8c323e34a13f13df19ca5ec64471cd02"
+    },
+    {
+      "path": "src/features/financial-twin/financial-twin.tsx",
+      "bytes": 14772,
+      "sha256": "2c531691f24d2b1aefb47086f66fae98b95495853ea1fc36e617f59167e33f1f"
+    },
+    {
+      "path": "src/features/financial-twin/reference-picker.tsx",
+      "bytes": 4085,
+      "sha256": "c473555bea80c546ce573a2c396c9609845765c70bda9bd9c79302ef19c81c06"
+    },
+    {
+      "path": "src/features/intelligence/intelligence.tsx",
+      "bytes": 14369,
+      "sha256": "2d5222d50e45e44b13c71581cd359cb0cb73c3dc95be401ec738e5665aa1072f"
+    },
+    {
+      "path": "src/features/matching/assessment-link.tsx",
+      "bytes": 737,
+      "sha256": "c710cb4ad75a1602c56f5d142e7cb0955b2503ce35f2e6a36f570b626a20c20c"
+    },
+    {
+      "path": "src/features/matching/matching.tsx",
+      "bytes": 11195,
+      "sha256": "dfec1f8705c3770dac87ed7eee4dd3ceef161fcc8e5ba66dfffbbae1f851ef42"
+    },
+    {
+      "path": "src/features/profile/profile.tsx",
+      "bytes": 5045,
+      "sha256": "c4072a1852feb55d2274c5da516da7810bda7aba5a190baadddf40bcdea1b4be"
+    },
+    {
+      "path": "src/features/resources/resources.tsx",
+      "bytes": 6772,
+      "sha256": "a098778af11902c53e61c111ba1bb0bbbda80d40a0826feff6dd12b783709c78"
+    },
+    {
+      "path": "src/features/scholarships/scholarships.tsx",
+      "bytes": 8784,
+      "sha256": "6f0ba19dca84f646b500c843b8e9ae06e4f4267527b5c6abe4bd888f1c7d9a94"
+    },
+    {
+      "path": "src/features/universities/detail-error.tsx",
+      "bytes": 734,
+      "sha256": "76e3c3acb37edc1da96a1d406ca9790b43df2c2851766be9766428a91aab7347"
+    },
+    {
+      "path": "src/features/universities/universities.tsx",
+      "bytes": 16359,
+      "sha256": "2e969689d18d2028907162b09f0205f4e62c4865ea6d99fcf89d42046d79fc09"
+    },
+    {
+      "path": "src/hooks/use-catalog-query.ts",
+      "bytes": 1948,
+      "sha256": "3a83f5392fb4b8aea82b21ecb50a57bb4ea51ddc2c9bd940df09d42f0314fb92"
+    },
+    {
+      "path": "src/hooks/use-persistent-state.ts",
+      "bytes": 2944,
+      "sha256": "a3f35df1f1efb276af4d3d3eec3345f9699aa089052b127ca3e87a177023534c"
+    },
+    {
+      "path": "src/lib/calculations/finance.ts",
+      "bytes": 941,
+      "sha256": "0871d2a77e4a3b1bdc55f310d9c518bd55029fbb1ece4b9b5f8c89dfc4bdaade"
+    },
+    {
+      "path": "src/lib/calculations/reference.ts",
+      "bytes": 1824,
+      "sha256": "7c21baa141b48787a1dbbc3ddcf94d0e58a9c8c4d81307781b1f89f726b946d2"
+    },
+    {
+      "path": "src/lib/utils/universities.ts",
+      "bytes": 1370,
+      "sha256": "7632a9262a32495d91d535138004605591b485962328ce212d2cce6e5a6d340c"
+    },
+    {
+      "path": "src/lib/validation/financial-plan.ts",
+      "bytes": 615,
+      "sha256": "ff1d2c8b474efaa7d53aab624c13655b6534ec0e3f8118d6ebb11725c3c32a8d"
+    },
+    {
+      "path": "src/lib/validation/profile.ts",
+      "bytes": 634,
+      "sha256": "3c4ce72ddced24f73e9a16842777f4c1c6938d1c1477ad96f4758cf104202b00"
+    },
+    {
+      "path": "src/server/staging-proxy.ts",
+      "bytes": 9058,
+      "sha256": "e4522c343b51c6e5a38c4bd5dce2d2a9f4dc9dbf2fa220727582a22495cfc8b1"
+    },
+    {
+      "path": "src/services/advisor.ts",
+      "bytes": 4797,
+      "sha256": "f7ac43acc885b400fad8f7d4a7c1fadaa119d862c03baec4a08fa8e2b2f0861d"
+    },
+    {
+      "path": "src/services/api-client.ts",
+      "bytes": 2323,
+      "sha256": "a380d7518a331bf411adfaf33ace4e78a80e30f4a8af1f45917dd311b8b8d5b7"
+    },
+    {
+      "path": "src/services/application-journey.ts",
+      "bytes": 4395,
+      "sha256": "f326e34829b2d45b09ce971b801fbe87697e94bc3dbcd2f5c392ba5b1fc3ce16"
+    },
+    {
+      "path": "src/services/config.ts",
+      "bytes": 906,
+      "sha256": "30a3ec554d9fc818788a792cf5340d3dc7b1fc5f445eeb651159c694f1547677"
+    },
+    {
+      "path": "src/services/contracts.ts",
+      "bytes": 4390,
+      "sha256": "0fb0bace3df61ed4147cd2cfa850cf0bc768dca86eece5f320eda4122d24931c"
+    },
+    {
+      "path": "src/services/financial-scenarios.ts",
+      "bytes": 2844,
+      "sha256": "36d791609c4eee889e0abd6527f9655bdbe9cfba1d6c0d80c2b3c7167fc49d51"
+    },
+    {
+      "path": "src/services/intelligence.ts",
+      "bytes": 2840,
+      "sha256": "b70164ec4ab662df2fa2e0c6d939d01cc6d4db61bfa61d2609c900e436800eb2"
+    },
+    {
+      "path": "src/services/local-import.ts",
+      "bytes": 2833,
+      "sha256": "e6ada4016450930dfba09b2952df9af10f14751b48dffbf942b110e14b4f0263"
+    },
+    {
+      "path": "src/services/mappers.ts",
+      "bytes": 2192,
+      "sha256": "978341aed5a5d3f9b312b60d1e3e7be350fe7f12d633d636b3202fedd30026ce"
+    },
+    {
+      "path": "src/services/profile-intelligence.ts",
+      "bytes": 3535,
+      "sha256": "796c376a9c0729dc02c40fcad174b9ff525284fbc6fe5379c45a0681b15802b4"
+    },
+    {
+      "path": "src/services/repository.ts",
+      "bytes": 6677,
+      "sha256": "9f8028a868e1c8d6c91535490c847ccca51bf96279d980676ce3ca81aa2f5f44"
+    },
+    {
+      "path": "src/services/scholarships-v2.ts",
+      "bytes": 4420,
+      "sha256": "7078f05c0387972abccf7f58486a81cdc1fe04f515e282af3f2a1506fdaf21e1"
+    },
+    {
+      "path": "src/services/student-contracts.ts",
+      "bytes": 2525,
+      "sha256": "16265f20ba5c324dec33bff3da963fa1baeda1d18ef00fc63a26897f0e16ba1f"
+    },
+    {
+      "path": "src/services/student.ts",
+      "bytes": 4951,
+      "sha256": "51f9efb9b816be96ff37d6efe8e5bb8fe4729aaffe3a26a9018b3f7eada90844"
+    },
+    {
+      "path": "src/styles/auth.css",
+      "bytes": 1737,
+      "sha256": "c02dc7b6e67509f10b195c62a5745af267b53c143412e3f41252e138beb68a7a"
+    },
+    {
+      "path": "src/styles/catalog.css",
+      "bytes": 4654,
+      "sha256": "33dbeca6e0e5f861ba4d6b02ead1b14aa4d20a083c91043b4e534f9e4917ca91"
+    },
+    {
+      "path": "src/styles/dashboard.css",
+      "bytes": 9450,
+      "sha256": "921d3fd4edfe6983b53089dcce41b2fb8e8d06b1b8548380bba3eb22a01d5742"
+    },
+    {
+      "path": "src/styles/features.css",
+      "bytes": 14965,
+      "sha256": "815ea5b166d8eb3247044d0415fea35771677dbd5927b9d173cc6d38ed597fb3"
+    },
+    {
+      "path": "src/styles/globals.css",
+      "bytes": 12592,
+      "sha256": "a27e479234fc0d9a3145066f55015b6ed1f28b573eb271f12a943f83a63571ea"
+    },
+    {
+      "path": "src/styles/marketing.css",
+      "bytes": 11141,
+      "sha256": "538edd92bf39a827be1bb122562bdd629b26fcd04f156667b2d8150d7c1bcb48"
+    },
+    {
+      "path": "src/styles/responsive.css",
+      "bytes": 21843,
+      "sha256": "35026467c0b4d15cfafcc25f66a4c0ecd47487048afc8c17ac4539a5d4a86a24"
+    },
+    {
+      "path": "src/types/index.ts",
+      "bytes": 1795,
+      "sha256": "84b84f219405ce8a386123b5b82aa7419564c1ba9dad5738cb49aa869b278629"
+    },
+    {
+      "path": "tests/financial-scenarios.test.ts",
+      "bytes": 5379,
+      "sha256": "58f08ed4e095b28a8554968ef4d3153e1899d1185bbc11ae673c32ef5ebb2393"
+    },
+    {
+      "path": "tests/staging-proxy.test.ts",
+      "bytes": 9779,
+      "sha256": "6d508c0eafc91ba6124f22131f86edc7d69c5e9186ffa0084d51cd9bc737bfab"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 1141,
+      "sha256": "aaf8bb793966c0cf86ecdd849f3caf5db2aa825dae4644d08321994d9d1a3e64"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 249,
+      "sha256": "8c13ddc625cee85e08644240dd716a5d32ffa0fc15eda71a0ed1061aa9e6b2ed"
+    }
+  ]
 }

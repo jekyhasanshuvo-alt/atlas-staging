@@ -1,3 +1,5 @@
+import hmac
+import json
 import logging
 from contextlib import asynccontextmanager
 
@@ -44,6 +46,10 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
     )
     app.state.settings = settings
     app.state.engine = db_engine
+    if settings.staging_demo:
+        from app.services.staging_mail import StagingMailbox
+
+        app.state.staging_mailbox = StagingMailbox()
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origins,
@@ -55,7 +61,49 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
 
     @app.middleware("http")
     async def private_security(request: Request, call_next):
-        private = request.url.path.startswith(("/api/v1/auth", "/api/v1/me", "/api/v1/advisor"))
+        path = request.url.path
+        safe = request.method in {"GET", "HEAD", "OPTIONS"}
+        private = path.startswith(
+            ("/api/v1/auth", "/api/v1/me", "/api/v1/advisor", "/api/v1/staging-mail")
+        )
+        if settings.staging_demo:
+            public_health = path == "/api/v1/health" and request.method in {"GET", "HEAD"}
+            if not public_health and not hmac.compare_digest(
+                request.headers.get("X-Atlas-Staging-Key", "").encode(),
+                settings.staging_transport_key.get_secret_value().encode(),
+            ):
+                return JSONResponse(
+                    status_code=403,
+                    content={
+                        "error": {
+                            "code": "forbidden",
+                            "message": "Trusted demo transport required.",
+                        }
+                    },
+                    headers={"Cache-Control": "no-store"},
+                )
+            if not settings.staging_database_writes_enabled and (
+                path.startswith(("/api/v1/auth", "/api/v1/me", "/api/v2/me"))
+                or (not safe and not path.startswith("/api/v1/staging-mail/"))
+            ):
+                return JSONResponse(
+                    status_code=503,
+                    content={
+                        "error": {
+                            "code": "not_initialized",
+                            "message": "Demo account actions await separately approved initialization.",
+                        }
+                    },
+                    headers={"Cache-Control": "no-store"},
+                )
+            if path == "/api/v1/auth/register" and not settings.staging_signup_enabled:
+                return JSONResponse(
+                    status_code=403,
+                    content={
+                        "error": {"code": "forbidden", "message": "Demo registration is closed."}
+                    },
+                    headers={"Cache-Control": "no-store"},
+                )
         if private and request.method not in {"GET", "HEAD", "OPTIONS"}:
             if request.headers.get(
                 "origin"
@@ -71,8 +119,7 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
                 )
             body = bytearray()
             async for chunk in request.stream():
-                body.extend(chunk)
-                if len(body) > 65536:
+                if len(body) + len(chunk) > 65536:
                     return JSONResponse(
                         status_code=413,
                         content={
@@ -82,7 +129,29 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
                             }
                         },
                     )
+                body.extend(chunk)
             request._body = bytes(body)
+            if settings.staging_demo and path in {
+                "/api/v1/auth/register",
+                "/api/v1/auth/login",
+                "/api/v1/auth/forgot-password",
+                "/api/v1/auth/resend-verification",
+            }:
+                try:
+                    email = json.loads(body).get("email", "").strip().lower()
+                except (ValueError, AttributeError, TypeError):
+                    email = ""
+                if email not in settings.staging_synthetic_emails:
+                    return JSONResponse(
+                        status_code=403,
+                        content={
+                            "error": {
+                                "code": "forbidden",
+                                "message": "Only approved synthetic accounts are available.",
+                            }
+                        },
+                        headers={"Cache-Control": "no-store"},
+                    )
         response = await call_next(request)
         if private or request.url.path.startswith("/api/v2/"):
             response.headers["Cache-Control"] = "no-store"
@@ -163,6 +232,10 @@ def create_app(settings: Settings | None = None, engine=None) -> FastAPI:
     app.include_router(intelligence_router)
     app.include_router(profile_intelligence_router)
     app.include_router(financial_scenario_router)
+    if settings.staging_demo:
+        from app.api.staging import router as staging_router
+
+        app.include_router(staging_router)
     if settings.experimental_foundation:
         from app.experimental.router import router as foundation_router
 

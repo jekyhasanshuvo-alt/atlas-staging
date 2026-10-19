@@ -60,7 +60,11 @@ def send_token(request, db, user, kind):
         )
     )
     try:
-        deliver(request.app.state.settings, user.email, kind, token)
+        settings = request.app.state.settings
+        if settings.staging_demo:
+            deliver(settings, user.email, kind, token, mailbox=request.app.state.staging_mailbox)
+        else:
+            deliver(settings, user.email, kind, token)
     except Exception as error:
         db.rollback()
         audit.error("event=mail_delivery_failed kind=%s error_type=%s", kind, type(error).__name__)
@@ -208,6 +212,11 @@ def consume(request, db, model, raw):
         or token.expires_at <= now()
     ):
         raise HTTPException(400, "This link is invalid or expired. Request a new one.")
+    if (
+        request.app.state.settings.staging_demo
+        and user.email not in request.app.state.settings.staging_synthetic_emails
+    ):
+        raise HTTPException(403, "This account is unavailable in the synthetic demo.")
     token.consumed_at = now()
     return user
 

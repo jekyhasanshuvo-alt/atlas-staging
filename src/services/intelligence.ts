@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { apiRequest, queryParams } from "./api-client";
-import { apiBaseUrl } from "./config";
+import { apiV2BaseUrl } from "./config";
 import { countrySchema, statusSchema } from "./contracts";
 const text = z.string().nullable();
 export const intelligenceSchema = z.object({
@@ -17,7 +17,7 @@ export type Intelligence = z.infer<typeof intelligenceSchema>;
 export type CatalogKind = "universities" | "programs";
 export const intelligencePageSchema = z.object({ items: z.array(intelligenceSchema), meta: z.object({ page: z.number(), page_size: z.number(), total: z.number(), pages: z.number() }) });
 export const comparisonSchema = z.object({ items: z.array(intelligenceSchema), unavailable_ids: z.array(z.string()) });
-const base = new URL("../v2/intelligence", apiBaseUrl + "/").href.replace(/\/$/, "");
+const base = apiV2BaseUrl + "/intelligence";
 export function intelligenceList(kind: CatalogKind, filters: Record<string, string | number>, fetcher: typeof fetch = fetch) { return apiRequest("/" + kind, intelligencePageSchema, queryParams(filters), fetcher, 8000, base); }
 export function intelligenceDetail(kind: CatalogKind, id: string, fetcher: typeof fetch = fetch) { return apiRequest("/" + kind + "/" + encodeURIComponent(id), intelligenceSchema, undefined, fetcher, 8000, base); }
 export function intelligenceCompare(kind: CatalogKind, ids: string[], fetcher: typeof fetch = fetch) { return apiRequest("/compare/" + kind, comparisonSchema, queryParams({ ids }), fetcher, 8000, base); }

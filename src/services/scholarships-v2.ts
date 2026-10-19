@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { apiRequest, queryParams } from "./api-client";
-import { apiBaseUrl } from "./config";
+import { apiV2BaseUrl } from "./config";
 
 const nullableText = z.string().nullable();
 const quoted = z.string().regex(/^\d+(\.\d+)?$/).nullable();
@@ -43,7 +43,7 @@ export const scholarshipV2Schema = z.object({
 export type ScholarshipV2 = z.infer<typeof scholarshipV2Schema>;
 export const scholarshipPageSchema = z.object({ items: z.array(scholarshipV2Schema),
   meta: z.object({page: z.number(), page_size: z.number(), total: z.number(), pages: z.number()}) });
-const base = new URL("../v2", apiBaseUrl + "/").href.replace(/\/$/, "");
+const base = apiV2BaseUrl;
 export function scholarshipList(filters: Record<string, string | number>, fetcher: typeof fetch = fetch) {
   return apiRequest("/scholarships", scholarshipPageSchema, queryParams(filters), fetcher, 8000, base);
 }

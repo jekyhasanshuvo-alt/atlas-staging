@@ -8,10 +8,19 @@ from email.message import EmailMessage
 from pathlib import Path
 
 
-def deliver(settings, email: str, kind: str, token: str):
+def deliver(settings, email: str, kind: str, token: str, *, mailbox=None):
     route = "verify-email" if kind == "verification" else "reset-password"
     # Fragment keeps one-time secrets out of HTTP access logs and referrers.
     link = f"{settings.frontend_url.rstrip('/')}/{route}#token={token}"
+    if settings.email_adapter == "staging_sink":
+        if (
+            not settings.staging_demo
+            or email not in settings.staging_synthetic_emails
+            or mailbox is None
+        ):
+            raise ValueError("Synthetic mail sink is unavailable")
+        mailbox.put(email, kind, link)
+        return
     message = EmailMessage()
     message["From"] = settings.smtp_from
     message["To"] = email
