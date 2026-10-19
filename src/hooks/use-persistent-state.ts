@@ -1,8 +1,9 @@
 "use client";
 import { useContext, useSyncExternalStore } from "react";
 import { StudentState, privateKeys } from "@/components/auth/student-provider";
-import { dataMode } from "@/services/config";
+import { dataMode, offlineDemo } from "@/services/config";
 import { emptyStudent } from "@/services/student";
+const demoMemory = new Map<string, string>();
 const listeners = new Set<() => void>();
 function subscribe(listener: () => void) {
   listeners.add(listener);
@@ -23,7 +24,7 @@ export function usePersistentState<T>(
     subscribe,
     () => {
       try {
-        return window.localStorage.getItem(key);
+        return offlineDemo ? demoMemory.get(key) ?? null : window.localStorage.getItem(key);
       } catch {
         return null;
       }
@@ -78,12 +79,13 @@ export function usePersistentState<T>(
   }
   function update(value: T | ((previous: T) => T)) {
     try {
-      const previous = parse(window.localStorage.getItem(key));
+      const previous = parse(offlineDemo ? demoMemory.get(key) ?? null : window.localStorage.getItem(key));
       const next =
         typeof value === "function"
           ? (value as (previous: T) => T)(previous)
           : value;
-      window.localStorage.setItem(key, JSON.stringify(next));
+      if (offlineDemo) demoMemory.set(key, JSON.stringify(next));
+      else window.localStorage.setItem(key, JSON.stringify(next));
       listeners.forEach((listener) => listener());
     } catch {
       window.alert(

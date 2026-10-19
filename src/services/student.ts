@@ -1,4 +1,4 @@
-import { apiBaseUrl } from "./config";
+import { apiBaseUrl, offlineDemo } from "./config";
 import { validateStudentResponse } from "./student-contracts";
 import type { Student, FinancialPlan } from "@/types";
 
@@ -16,6 +16,7 @@ export async function studentRequest<T>(
   body?: unknown,
   csrf = "atlas",
 ): Promise<T> {
+  if (offlineDemo) throw new StudentApiError(503, "Accounts and API access are disabled in this offline demo.");
   let response: Response;
   try {
     response = await fetch(apiBaseUrl + path, {

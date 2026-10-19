@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useStudent } from "@/components/auth/student-provider";
-import { dataMode } from "@/services/config";
+import { dataMode, offlineDemo } from "@/services/config";
 import { calculateScenario, scenarioDifference, type ScenarioRequest, type ScenarioResult } from "@/services/financial-scenarios";
 import type { Requester } from "@/services/profile-intelligence";
 export function ScenarioResults({ result }: {
@@ -117,6 +117,7 @@ function Workbench({ send }: {
 }
 export function ExactFinancialScenarios() {
     const student = useStudent();
+    if (offlineDemo) return <section className="panel section-gap"><h2>Offline financial demo</h2><p>The calculator above runs in this page using hypothetical inputs. Account-backed scenarios are disabled; no exchange rate or award is promised.</p></section>;
     if (dataMode !== "api" || !student.user?.email_verified || student.loading)
         return <section className="panel section-gap"><h2>Optional exact-period scenarios</h2><p>Sign in to a verified account using API mode to calculate request-only scenarios. Saved programs, structured credentials and persisted study preferences remain unavailable pending schema and privacy approval.</p></section>;
     return <Workbench key={student.user.id} send={student.request}/>;

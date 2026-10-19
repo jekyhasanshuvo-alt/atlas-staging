@@ -1,3 +1,4 @@
+import { offlineDemo } from "@/services/config";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -85,6 +86,7 @@ const faqs = [
   },
 ];
 export default function Landing() {
+  if (offlineDemo) return <main className="panel section-gap"><span className="eyebrow">ATLAS AI · FICTIONAL HACKATHON DEMO</span><h1>Explore your study planning possibilities</h1><p>Try deterministic financial calculations with hypothetical inputs. Catalogs are intentionally empty. No accounts, email delivery, database, external AI or personal data collection.</p><p>All demo inputs stay in page memory and reset on reload. Do not enter real student information.</p><nav aria-label="Demo navigation"><Link className="button primary" href="/dashboard">Open demo workspace</Link><Link className="button" href="/financial-twin">Try Financial Twin</Link><Link className="button" href="/universities">Empty university catalog</Link><Link className="button" href="/scholarships">Empty scholarship catalog</Link></nav></main>;
   return (
     <>
       <section className="landing-hero">

@@ -9,7 +9,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { dataMode } from "@/services/config";
+import { dataMode, offlineDemo } from "@/services/config";
 import {
   studentRequest,
   StudentApiError,
@@ -300,7 +300,7 @@ export function WorkspaceGuard({ children }: { children: React.ReactNode }) {
     return (
       <>
         <p className="info-note">
-          Offline demo workspace · saved only in this browser
+          {offlineDemo ? "DEMO workspace · temporary inputs reset on reload" : "Offline demo workspace · saved only in this browser"}
         </p>
         {children}
       </>

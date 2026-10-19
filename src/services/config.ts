@@ -1,6 +1,9 @@
+export const offlineDemo = process.env.NEXT_PUBLIC_ATLAS_OFFLINE_DEMO === "true";
 export const dataMode = process.env.NEXT_PUBLIC_ATLAS_DATA_MODE ?? "demo";
 if (dataMode !== "demo" && dataMode !== "api")
   throw new Error("NEXT_PUBLIC_ATLAS_DATA_MODE must be demo or api");
+if (offlineDemo && (dataMode !== "demo" || process.env.NEXT_PUBLIC_ATLAS_STAGING_DEMO === "true"))
+  throw new Error("Offline demo requires demo data mode and no API staging mode");
 const configuredBase =
   process.env.NEXT_PUBLIC_ATLAS_API_BASE_URL ?? "http://127.0.0.1:8000/api/v1";
 if (configuredBase !== "/api/v1") {

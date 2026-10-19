@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { apiBaseUrl } from "./config";
+import { apiBaseUrl, offlineDemo } from "./config";
 export class ApiError extends Error {
   constructor(
     message: string,
@@ -17,6 +17,7 @@ export async function apiRequest<T>(
   timeoutMs = 8000,
   baseUrl = apiBaseUrl,
 ): Promise<T> {
+  if (offlineDemo) throw new ApiError("API access is disabled in this offline demo.", 503);
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {

@@ -23,7 +23,7 @@ import {
   Search,
 } from "lucide-react";
 import { useStudent } from "@/components/auth/student-provider";
-import { dataMode } from "@/services/config";
+import { dataMode, offlineDemo } from "@/services/config";
 import { AccountStrip } from "@/features/auth/account-strip";
 import { usePersistentState } from "@/hooks/use-persistent-state";
 import { DemoNotice } from "@/components/shared";
@@ -100,7 +100,7 @@ export function Sidebar({ close }: { close: () => void }) {
       </div>
       <div className="workspace-label">YOUR WORKSPACE</div>
       <nav aria-label="Student navigation">
-        {navigation.map(({ href, label, icon: Icon }) => (
+        {navigation.filter(item => !offlineDemo || ["/dashboard", "/universities", "/scholarships", "/financial-twin", "/compare", "/student-life", "/career"].includes(item.href)).map(({ href, label, icon: Icon }) => (
           <Link
             onClick={close}
             className={

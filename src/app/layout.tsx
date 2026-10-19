@@ -1,3 +1,5 @@
+import { OfflineDemoBoundary } from "@/components/offline-demo-boundary";
+import { offlineDemo } from "@/services/config";
 import type { Metadata } from "next";
 import { StudentProvider } from "@/components/auth/student-provider";
 import "@/styles/auth.css";
@@ -31,7 +33,7 @@ export default function RootLayout({
             are placeholders, not known free costs. Funding and FX are not guaranteed.
           </p>
         )}
-        <StudentProvider>{children}</StudentProvider>
+        {offlineDemo ? <OfflineDemoBoundary><StudentProvider>{children}</StudentProvider></OfflineDemoBoundary> : <StudentProvider>{children}</StudentProvider>}
       </body>
     </html>
   );

@@ -141,6 +141,8 @@ export async function proxyRequest(request: Request, settings: ProxySettings | n
   } finally { clearTimeout(timer); request.signal.removeEventListener("abort", disconnect); }
 }
 export async function configuredProxy(request: Request): Promise<Response> {
+  if (process.env.NEXT_PUBLIC_ATLAS_OFFLINE_DEMO === "true")
+    return Response.json({ error: { message: "API and account access are disabled in this offline demo." } }, { status: 404, headers: { "Cache-Control": "no-store" } });
   try { return await proxyRequest(request, proxySettings(process.env)); }
   catch { return error(503, "The demo API is not configured safely."); }
 }
